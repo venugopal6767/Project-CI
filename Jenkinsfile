@@ -6,5 +6,15 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/venugopal6767/Project-CI.git' 
             }
         }   
+        stage('Maven compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+        stage('maven test') {
+            steps {
+                sh ' mvn test'
+            }
+        }
     }
 }
